@@ -1,16 +1,30 @@
-class TodoList {
+class List {
     constructor() {
-        this.todos = [];
+        this.data = [];
     }
 
-    addTodo() {
-        this.todos.push('Novo Todo');
-        console.log(this.todos);
+    add(data) {
+        this.data.push(data);
+        console.log(this.data);
     }
 }
 
-const MinhaList = new TodoList();
+class TodoList extends List {
+    constructor() {
+        super();
+
+        this.usuario = 'Islan Rodrigues';
+    }
+
+    mostraUsuario() {
+        console.log(this.usuario);
+    }
+}
+
+var MinhaList = new TodoList();
 
 document.getElementById('new-todo').onclick = function() {
-    MinhaList.addTodo();
+    MinhaList.add('Novo TODO');
 };
+
+MinhaList.mostraUsuario();
