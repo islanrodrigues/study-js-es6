@@ -70,3 +70,28 @@ document.getElementById('new-todo').onclick = function () {
 };
 
 MinhaList.mostraUsuario();
+
+var Matematica =
+/*#__PURE__*/
+function () {
+  function Matematica() {
+    _classCallCheck(this, Matematica);
+  }
+
+  _createClass(Matematica, null, [{
+    key: "soma",
+    value: function soma(a, b) {
+      return a + b;
+    }
+  }, {
+    key: "multiplicacao",
+    value: function multiplicacao(a, b) {
+      return a * b;
+    }
+  }]);
+
+  return Matematica;
+}();
+
+console.log('static method "soma": ' + Matematica.soma(4, 6));
+console.log('static method "multiplicacao": ' + Matematica.multiplicacao(2, 2));
