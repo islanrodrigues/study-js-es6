@@ -30,8 +30,7 @@ function () {
   _createClass(List, [{
     key: "add",
     value: function add(data) {
-      this.data.push(data);
-      console.log(this.data);
+      this.data.push(data); //console.log(this.data);
     }
   }]);
 
@@ -55,8 +54,7 @@ function (_List) {
 
   _createClass(TodoList, [{
     key: "mostraUsuario",
-    value: function mostraUsuario() {
-      console.log(this.usuario);
+    value: function mostraUsuario() {//console.log(this.usuario);
     }
   }]);
 
@@ -91,7 +89,24 @@ function () {
   }]);
 
   return Matematica;
-}();
+}(); //console.log('static method "soma": ' + Matematica.soma(4, 6));
+//console.log('static method "multiplicacao": ' + Matematica.multiplicacao(2, 2));
 
-console.log('static method "soma": ' + Matematica.soma(4, 6));
-console.log('static method "multiplicacao": ' + Matematica.multiplicacao(2, 2));
+
+var arr = [8, 27, 28, 6, 19];
+var newArr = arr.map(function (item, index) {
+  return item + index;
+});
+console.log(newArr);
+var sum = arr.reduce(function (total, next) {
+  return total + next;
+});
+console.log(sum);
+var filter = arr.filter(function (item) {
+  return item % 2 === 0;
+});
+console.log(filter);
+var find = arr.find(function (item) {
+  return item % 2 === 1;
+});
+console.log(find);
