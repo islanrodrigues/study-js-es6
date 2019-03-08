@@ -1,31 +1,32 @@
 "use strict";
 
-var arr = [1, 2, 3, 4, 5];
-var newArr = arr.map(function (item) {
-  return item * 2;
-});
-console.log(newArr);
-
-var teste = function teste() {
-  return 'teste';
+var user = {
+  nome: "Islan",
+  idade: 21,
+  endereco: {
+    cidade: "Guarulhos",
+    estado: "SP"
+  }
 };
+console.log(user.nome);
+console.log(user.idade);
+console.log(user.endereco.cidade);
+var nome = user.nome,
+    idade = user.idade,
+    cidade = user.endereco.cidade;
+console.log(nome);
+console.log(idade);
+console.log(cidade);
 
-console.log(teste());
+function mostraInfo(_ref) {
+  var nome = _ref.nome,
+      idade = _ref.idade,
+      _ref$endereco = _ref.endereco,
+      cidade = _ref$endereco.cidade,
+      estado = _ref$endereco.estado;
+  console.log(nome);
+  console.log(idade);
+  console.log(cidade, estado);
+}
 
-var teste2 = function teste2() {
-  return 'teste 02';
-};
-
-console.log(teste2());
-
-var teste3 = function teste3() {
-  return {
-    Nome: 'Islan'
-  };
-};
-
-console.log(teste3());
-var filter = arr.filter(function (item) {
-  return item % 2 === 0;
-});
-console.log(filter);
+mostraInfo(user);

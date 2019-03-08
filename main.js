@@ -1,22 +1,27 @@
-const arr = [1, 2, 3, 4, 5];
+const user = {
+    nome: "Islan",
+    idade: 21,
+    endereco: {
+        cidade: "Guarulhos",
+        estado: "SP"
+    },
+};
 
-const newArr = arr.map(item => item * 2);
+console.log(user.nome);
+console.log(user.idade);
+console.log(user.endereco.cidade);
 
-console.log(newArr);
+const {nome, idade, endereco: {cidade}} = user;
 
-const teste = () => {
-    return 'teste';
+console.log(nome);
+console.log(idade);
+console.log(cidade);
+
+function mostraInfo({nome, idade, endereco: {cidade, estado}}) {
+    console.log(nome);
+    console.log(idade);
+    console.log(cidade, estado);
+    
 }
-console.log(teste());
 
-
-const teste2 = () => 'teste 02';
-console.log(teste2());
-
-
-const teste3 = () => ({Nome: 'Islan'});
-console.log(teste3());
-
-
-const filter = arr.filter(item => item%2 === 0);
-console.log(filter);
+mostraInfo(user);
