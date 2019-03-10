@@ -86,18 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./funcoes.js":
-/*!********************!*\
-  !*** ./funcoes.js ***!
-  \********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.soma = soma;\nexports.sub = void 0;\n\nfunction soma(a, b) {\n  return a + b;\n}\n\nvar sub = function sub(a, b) {\n  return a - b;\n};\n\nexports.sub = sub;\n\n//# sourceURL=webpack:///./funcoes.js?");
-
-/***/ }),
-
 /***/ "./main.js":
 /*!*****************!*\
   !*** ./main.js ***!
@@ -106,7 +94,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _funcoes = __webpack_require__(/*! ./funcoes */ \"./funcoes.js\");\n\nvar _soma = _interopRequireDefault(__webpack_require__(/*! ./soma */ \"./soma.js\"));\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nconsole.log((0, _soma.default)(5, 8));\nconsole.log((0, _funcoes.soma)(2, 5));\nconsole.log((0, _funcoes.sub)(15, 5));\n\n//# sourceURL=webpack:///./main.js?");
+eval("\n\nvar _soma = _interopRequireWildcard(__webpack_require__(/*! ./soma */ \"./soma.js\"));\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }\n\n//import {soma as somaAlias, sub} from './funcoes'\nconsole.log((0, _soma.default)(1, 3));\nconsole.log((0, _soma.sub)(5, 2));\nconsole.log((0, _soma.mult)(4, 2));\n\n//# sourceURL=webpack:///./main.js?");
 
 /***/ }),
 
@@ -118,7 +106,7 @@ eval("\n\nvar _funcoes = __webpack_require__(/*! ./funcoes */ \"./funcoes.js\");
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = soma;\n\nfunction soma(a, b) {\n  return a + b;\n}\n\n//# sourceURL=webpack:///./soma.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = soma;\nexports.sub = sub;\nexports.mult = mult;\n\nfunction soma(a, b) {\n  return a + b;\n}\n\nfunction sub(a, b) {\n  return a - b;\n}\n\nfunction mult(a, b) {\n  return a * b;\n}\n\n//# sourceURL=webpack:///./soma.js?");
 
 /***/ })
 
