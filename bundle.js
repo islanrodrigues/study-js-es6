@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.soma = soma;\n\nfunction soma(a, b) {\n  return a + b;\n}\n\n//# sourceURL=webpack:///./funcoes.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.soma = soma;\nexports.sub = void 0;\n\nfunction soma(a, b) {\n  return a + b;\n}\n\nvar sub = function sub(a, b) {\n  return a - b;\n};\n\nexports.sub = sub;\n\n//# sourceURL=webpack:///./funcoes.js?");
 
 /***/ }),
 
@@ -106,7 +106,19 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _funcoes = __webpack_require__(/*! ./funcoes */ \"./funcoes.js\");\n\nconsole.log((0, _funcoes.soma)(2, 3));\n\n//# sourceURL=webpack:///./main.js?");
+eval("\n\nvar _funcoes = __webpack_require__(/*! ./funcoes */ \"./funcoes.js\");\n\nvar _soma = _interopRequireDefault(__webpack_require__(/*! ./soma */ \"./soma.js\"));\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nconsole.log((0, _soma.default)(5, 8));\nconsole.log((0, _funcoes.soma)(2, 5));\nconsole.log((0, _funcoes.sub)(15, 5));\n\n//# sourceURL=webpack:///./main.js?");
+
+/***/ }),
+
+/***/ "./soma.js":
+/*!*****************!*\
+  !*** ./soma.js ***!
+  \*****************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = soma;\n\nfunction soma(a, b) {\n  return a + b;\n}\n\n//# sourceURL=webpack:///./soma.js?");
 
 /***/ })
 
