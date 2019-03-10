@@ -1,13 +1,5 @@
 "use strict";
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
 var user = {
   nome: "Islan",
   idade: 21,
@@ -16,45 +8,13 @@ var user = {
     cidade: "Guarulhos",
     estado: "SP"
   }
-}; // -- REST
-
-var nome = user.nome,
-    resto = _objectWithoutProperties(user, ["nome"]);
-
-console.log(nome);
-console.log(resto);
-var arr = [1, 2, 3, 4, 5];
-var a = arr[0],
-    b = arr[1],
-    c = arr.slice(2);
-console.log(a);
-console.log(b);
-console.log(c);
-
-function soma() {
-  for (var _len = arguments.length, params = new Array(_len), _key = 0; _key < _len; _key++) {
-    params[_key] = arguments[_key];
-  }
-
-  return params.reduce(function (total, next) {
-    return total + next;
-  });
-}
-
-console.log(soma(1, 4, 5, 10)); // -- SPREAD
-
-var arr1 = [1, 2, 3];
-var arr2 = [4, 5, 6];
-var arr3 = [].concat(arr1, arr2);
-console.log(arr3);
-var usuario1 = {
-  nome: "Islan",
-  idade: 21,
-  ocupacao: "desenvolvedor"
 };
+var nome = user.nome,
+    idade = user.idade,
+    _user$endereco = user.endereco,
+    cidade = _user$endereco.cidade,
+    estado = _user$endereco.estado;
+console.log('Olá! Meu nome é ' + nome + ' e tenho ' + idade + ' anos.'); //Usando Template Literals
 
-var usuario2 = _objectSpread({}, usuario1, {
-  nome: "José"
-});
-
-console.log(usuario2);
+console.log("Ol\xE1! Meu nome \xE9 ".concat(nome, " e tenho ").concat(idade, " anos."));
+console.log("Ol\xE1! Me chamo ".concat(nome, ", tenho ").concat(idade, " anos e resido atualmente na cidade de ").concat(cidade, "-").concat(estado));

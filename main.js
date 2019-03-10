@@ -8,44 +8,10 @@ const user = {
     },
 };
 
-// -- REST
-const {nome, ...resto} = user;
+const {nome, idade, endereco:{cidade, estado}} = user;
 
-console.log(nome);
-console.log(resto);
- 
-const arr = [1, 2, 3, 4, 5];
+console.log('Olá! Meu nome é ' + nome + ' e tenho ' + idade + ' anos.');
 
-const [a , b, ...c] = arr;
-
-console.log(a);
-console.log(b);
-console.log(c);
-
-function soma(...params) {
-    return params.reduce((total, next) => total + next);
-}
-
-console.log(soma(1, 4, 5, 10));
-
-
-
-// -- SPREAD
-const arr1 = [1, 2, 3];
-const arr2 = [4, 5, 6];
-
-const arr3 = [...arr1, ...arr2];
-
-console.log(arr3);
-
-const usuario1 = {
-    nome: "Islan",
-    idade: 21,
-    ocupacao: "desenvolvedor",
-};
-
-const usuario2 = {
-    ...usuario1, nome: "José"
-};
-
-console.log(usuario2);
+//Usando Template Literals
+console.log(`Olá! Meu nome é ${nome} e tenho ${idade} anos.`);
+console.log(`Olá! Me chamo ${nome}, tenho ${idade} anos e resido atualmente na cidade de ${cidade}-${estado}`);
