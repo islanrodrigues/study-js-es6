@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./funcoes.js":
+/*!********************!*\
+  !*** ./funcoes.js ***!
+  \********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.soma = soma;\nexports.sub = sub;\nexports.mult = mult;\n\nfunction soma(a, b) {\n  return a + b;\n}\n\nfunction sub(a, b) {\n  return a - b;\n}\n\nfunction mult(a, b) {\n  return a * b;\n}\n\n//# sourceURL=webpack:///./funcoes.js?");
+
+/***/ }),
+
 /***/ "./main.js":
 /*!*****************!*\
   !*** ./main.js ***!
@@ -94,19 +106,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _soma = _interopRequireWildcard(__webpack_require__(/*! ./soma */ \"./soma.js\"));\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }\n\n//import {soma as somaAlias, sub} from './funcoes'\nconsole.log((0, _soma.default)(1, 3));\nconsole.log((0, _soma.sub)(5, 2));\nconsole.log((0, _soma.mult)(4, 2));\n\n//# sourceURL=webpack:///./main.js?");
-
-/***/ }),
-
-/***/ "./soma.js":
-/*!*****************!*\
-  !*** ./soma.js ***!
-  \*****************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = soma;\nexports.sub = sub;\nexports.mult = mult;\n\nfunction soma(a, b) {\n  return a + b;\n}\n\nfunction sub(a, b) {\n  return a - b;\n}\n\nfunction mult(a, b) {\n  return a * b;\n}\n\n//# sourceURL=webpack:///./soma.js?");
+eval("\n\nvar functions = _interopRequireWildcard(__webpack_require__(/*! ./funcoes */ \"./funcoes.js\"));\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }\n\n//import soma, {sub, mult} from './soma'\nconsole.log(functions);\nconsole.log(functions.soma(1, 4));\nconsole.log(functions.sub(5, 2));\nconsole.log(functions.mult(2, 2));\n\n//# sourceURL=webpack:///./main.js?");
 
 /***/ })
 

@@ -1,6 +1,7 @@
-//import {soma as somaAlias, sub} from './funcoes'
-import soma, {sub, mult} from './soma'
+import * as functions from './funcoes'
+//import soma, {sub, mult} from './soma'
 
-console.log(soma(1, 3));
-console.log(sub(5,2));
-console.log(mult(4,2));
+console.log(functions);
+console.log(functions.soma(1,4));
+console.log(functions.sub(5,2));
+console.log(functions.mult(2,2));
