@@ -1,0 +1,1 @@
+alert('Acessou! Testando o Webpack Dev Server');
