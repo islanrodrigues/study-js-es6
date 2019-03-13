@@ -19,5 +19,8 @@
     "dev": "webpack-dev-server --mode=development",
     "build": "webpack --mode=production",
     "error": "webpack --display-error-details"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
   }
 }
