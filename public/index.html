@@ -3,9 +3,63 @@
 <head>
     <meta charset="utf-8">
     <title>Estudando ES6+</title>    
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Muli');
+
+        body {
+            font-family: 'Muli', sans-serif;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            clear: both;
+            margin-top: 20px;
+        }
+
+        img {
+            width: 80px;
+            float: left;
+            margin-right: 10px;
+        }
+
+        strong {
+            font-size: 20px;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Estudando JS ES6+</h1>
+   <form id="repo-form">
+       <input type="text" name="repo">
+       <button type="submit">Adicionar</button>
+
+       <ul id="repo-list">
+           <li>
+               <img src="https://avatars1.githubusercontent.com/u/8366406?s=460&v=4">
+               <strong>Islan Rodrigues</strong>
+               <p>< "A dev in construction 💻☕️ " /> Computer Science Student</p>
+               <a target="_blank" href="https://github.com/islanrodrigues">Acessar</a>
+           </li>
+
+           <li>
+                <img src="https://avatars1.githubusercontent.com/u/8366406?s=460&v=4">
+                <strong>Islan Rodrigues</strong>
+                <p>< "A dev in construction 💻☕️ " /> Computer Science Student</p>
+                <a target="_blank" href="https://github.com/islanrodrigues">Acessar</a>
+            </li>
+
+       </ul>
+   </form>
     
     <script src="./bundle.js"></script>
 </body>
