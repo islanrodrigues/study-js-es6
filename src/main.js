@@ -1,16 +1,27 @@
-import axios from 'axios';
+class App {
+    constructor() {
+        this.repositories = [];
 
-class Api {
-    static async getUserInfo(username) {
-        try {
-            const response = await axios.get(`https://api.github.com/users/${username}`);
-            console.log(response);
+        this.formEl = document.getElementById('repo-form');
+        this.registerHandlers();
+    }
 
-        } catch (error) {
-            console.warn('ERRO NA API');
-        }
+    registerHandlers() {
+        this.formEl.onsubmit = event => this.addRepository(event);
+    }
+
+    addRepository(event) {
+        event.preventDefault();
+        
+        this.repositories.push({
+            name: 'Islan Rodrigues',
+            description: '< "A dev in construction 💻☕️ " /> Computer Science Student',
+            avatar_url: 'https://avatars1.githubusercontent.com/u/8366406?s=460&v=4',
+            html_url: 'https://github.com/islanrodrigues',
+        });
+
+        console.log(this.repositories);
     }
 }
 
-Api.getUserInfo('islanrodrigues');
-Api.getUserInfo('islanrodrigues2');
+new App();
