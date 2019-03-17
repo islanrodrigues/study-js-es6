@@ -12,6 +12,14 @@
             font-family: 'Work Sans', sans-serif;
         }
 
+        button, input {
+            font-family: 'Work Sans', sans-serif;
+            border-radius: 5px;
+            padding: 5px;
+            border: 1px solid black;
+            margin-right: 5px;
+        }
+
         ul {
             list-style: none;
             margin: 0;
@@ -45,12 +53,11 @@
 <body>
    <form id="repo-form">
        <input type="text" name="repo">
-       <button type="submit">Adicionar</button>
+       <button type="submit"><b>Adicionar</b> <i class="fas fa-plus"></i></button>
+    </form>
 
-       <ul id="repo-list">
-          
-       </ul>
-   </form>
+    <ul id="repo-list"></ul>
+   
     
     <script src="./bundle.js"></script>
 </body>

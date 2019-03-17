@@ -12,6 +12,18 @@ class App {
     } // closing construtor
 
 
+    setLoading(loading = true) {
+        if (loading === true) {
+            let loadingEl = document.createElement('span');
+            loadingEl.setAttribute('id', 'loading');
+            loadingEl.appendChild(document.createTextNode('Carregando ...'));
+
+            this.formEl.appendChild(loadingEl);
+        
+        } else {
+            document.getElementById('loading').remove();
+        }
+    }
 
     registerHandlers() {
         this.formEl.onsubmit = event => this.addRepository(event);
@@ -33,7 +45,7 @@ class App {
 
             let iconEl = document.createElement('i');
             iconEl.setAttribute('class', 'fab fa-github');
-            
+
             let linkEl = document.createElement('a');
             linkEl.setAttribute('target', '_blank');
             linkEl.appendChild(document.createTextNode('Acessar '));
@@ -60,21 +72,29 @@ class App {
         if (repoInput.length === 0)
             return;  
         
-        const response = await api.get(`/users/${repoInput}`);
-        //console.log(response);
+        try {
+            this.setLoading();
 
-        const {name, bio, avatar_url, html_url} = response.data;
+            const response = await api.get(`/users/${repoInput}`);
+        
+            const {name, bio, avatar_url, html_url} = response.data;
 
-        this.repositories.push({
-            name,
-            bio,
-            avatar_url,
-            html_url,
-        });
+            this.repositories.push({
+                name,
+                bio,
+                avatar_url,
+                html_url,
+            });
 
-        this.inputEl.value = '';
+            this.inputEl.value = '';
 
-        this.render();
+            this.render();
+        
+        } catch (err) {
+            alert('O usuário informado não é válido!');
+        }
+
+        this.setLoading(false);
     }// closing method
 
 }//closing class
