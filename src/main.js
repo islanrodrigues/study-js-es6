@@ -80,8 +80,8 @@ class App {
             const {name, bio, avatar_url, html_url} = response.data;
 
             this.repositories.push({
-                name,
-                bio,
+                name: name !== null ? name : '(...Sem nome) :/',
+                bio: bio !== null ? bio : '(...Sem Bio) :/',
                 avatar_url,
                 html_url,
             });
